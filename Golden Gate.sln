@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden Gate", "Golden Gate\Golden Gate.csproj", "{4C889541-4A56-444C-8B54-74C61DC81156}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C889541-4A56-444C-8B54-74C61DC81156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C889541-4A56-444C-8B54-74C61DC81156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C889541-4A56-444C-8B54-74C61DC81156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C889541-4A56-444C-8B54-74C61DC81156}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A638025-2E87-46D0-AC91-CD9B2E7ADFC2}
+	EndGlobalSection
+EndGlobal
