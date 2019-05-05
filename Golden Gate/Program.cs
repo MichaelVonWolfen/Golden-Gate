@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Golden_Gate
-{
+{ 
     class Program
     {
 
@@ -19,55 +19,58 @@ namespace Golden_Gate
         }
         static void Main(string[] args)
         {
-            int n = 0;
-            bool ok;
-            Console.WriteLine("Cate elemente se introduc?");
-            do
+            while (true)
             {
-                ok = true;
-                try
+                int n = 0;
+                bool ok;
+                Console.WriteLine("Cate elemente se introduc?");
+                do
                 {
-                    n = Convert.ToInt32(Console.ReadLine());
+                    ok = true;
+                    try
+                    {
+                        n = Convert.ToInt32(Console.ReadLine());
 
-                }
-                catch (FormatException e)
-                {
-                    ok = !ok;
-                    Console.WriteLine(e.Message + "\n");
-                }
-                if (n < 5)
-                    Console.WriteLine("Trebuie sa tastati un numar > 5!");
-            } while (!ok || n < 5);
+                    }
+                    catch (FormatException e)
+                    {
+                        ok = !ok;
+                        Console.WriteLine(e.Message + "\n");
+                    }
+                    if (n < 5)
+                        Console.WriteLine("Trebuie sa tastati un numar > 5!");
+                } while (!ok || n < 5);
 
-            int[] vec = new int[n];
-            Console.WriteLine("Tastati elemente:");
-            for(int i = 0; i < n; i++)
-            {
-                try
+                int[] vec = new int[n];
+                Console.WriteLine("Tastati elemente:");
+                for (int i = 0; i < n; i++)
                 {
-                    vec[i] = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        vec[i] = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (FormatException e)
+                    {
+                        i--;
+                        Console.WriteLine(e.Message + "\n Reincercati:");
+                    }
                 }
-                catch(FormatException e)
-                {
-                    i--;
-                    Console.WriteLine(e.Message + "\n Reincercati:");
-                }
+                Console.WriteLine("SUCCES in citire");
+
+                Sort x = new Sort();
+                x.MergeSort(ref vec,
+                            0,
+                            vec.Length - 1,
+                            false); //Sortare vector de elemente citit
+                print(vec);
+
+                GoldenGate GG = new GoldenGate();
+                vec = GG.GoldGate(vec);
+
+                print(vec);
+
+                Console.ReadKey();
             }
-            Console.WriteLine("SUCCES in citire");
-
-            Sort x = new Sort();
-            x.MergeSort(ref vec,
-                        0,
-                        vec.Length - 1,
-                        false); //Sortare vector de elemente citit
-            print(vec);
-
-            GoldenGate GG = new GoldenGate();
-            vec = GG.GoldGate(vec);
-
-            print(vec);
-
-            Console.ReadKey();
         }
     }
 }

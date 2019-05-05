@@ -20,12 +20,20 @@ namespace Golden_Gate
             int ampl1, ampl2;
             int defazaj = 0, counter = 0;
             int[] copy = new int[vec.Length];
-
-            if (vec.Length % 4 == 0)
-                ampl1 = vec.Length / 4 - 1;
-            else ampl1 = vec.Length / 4;
-            ampl2 = (vec.Length * 3) / 4;
-
+            if ((vec.Length - 5) % 4 != 0)
+            {
+                if (vec.Length % 4 == 0)
+                    ampl1 = vec.Length / 4 - 1;
+                else ampl1 = vec.Length / 4;
+                ampl2 = (vec.Length * 3) / 4;
+            }
+            else
+            {
+                if (vec.Length % 4 == 0)
+                    ampl1 = vec.Length / 4;
+                else ampl1 = vec.Length / 4;
+                ampl2 = (vec.Length * 3) / 4 + 1;
+            }
             foreach (int i in vec)
             {
                 if ((defazaj == 0 && counter == 2) || counter == 4)
@@ -42,9 +50,10 @@ namespace Golden_Gate
                 if(defazaj > 0)
                 {
                     counter++;
-                    if (i == 3 && (vec.Length - 1) % 4 == 0)
+                    /*if (i == 3 && (vec.Length - 1) % 4 == 0)
                         counter++; //caz special in care se suprapun valori iar programul nu merge cum ar trebui
-                    switch (counter)
+                   */ 
+                   switch (counter)
                     {
                         case 1:
                             Gates(ref copy, i, true, ampl1, defazaj);
